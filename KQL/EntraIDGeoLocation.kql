@@ -1,0 +1,6 @@
+SigninLogs
+| extend Location_City = tostring(LocationDetails.city)
+| extend Location_State = tostring(LocationDetails.state)
+| extend Location_Latitude = tostring(LocationDetails.geoCoordinates.latitude)
+| extend Location_Longitude = tostring(LocationDetails.geoCoordinates.longitude)
+| project TimeGenerated, Identity, ResultType, ResultDescription, Location_City, Location_State, Location_Latitude, Location_Longitude, AppDisplayName, ClientAppUsed, ConditionalAccessStatus, Location, IsInteractive
