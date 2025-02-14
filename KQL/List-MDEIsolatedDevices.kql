@@ -1,0 +1,7 @@
+DeviceInfo
+| summarize arg_max(Timestamp, *) by DeviceId 
+| extend MitigationStatus1 = parse_json(MitigationStatus)
+| mv-expand MitigationStatus1
+| extend IsIsolated = tostring(MitigationStatus1.Isolated)
+| where IsIsolated == "true"
+| project Timestamp, DeviceId, DeviceName, IsIsolated
