@@ -1,0 +1,5 @@
+SigninLogs
+| where UserId == "" //Use the Object ID from Entra ID of the Breakglass account
+| project UserId, UserDisplayName, UserPrincipalName
+
+//Entity Mapping - [Account] AADUseriD + UserID,  DisplayName = UserDisplayname
