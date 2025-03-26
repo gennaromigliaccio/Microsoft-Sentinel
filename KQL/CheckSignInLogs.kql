@@ -1,0 +1,3 @@
+SigninLogs
+| where UserPrincipalName == "EMAIL ADDRESS"
+| project TimeGenerated, UserPrincipalName, ResultType, AppDisplayName, IPAddress, LocationDetails
