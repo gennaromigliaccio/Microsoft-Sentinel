@@ -5,6 +5,6 @@ let SignInLogsIPs = SigninLogs
     | summarize by IPAddress;
 AzureActivityIPs
     | join kind=leftanti (SignInLogsIPs) on $left.CallerIpAddress == $right.IPAddress
-    //| summarize by Caller
+    | summarize by Caller
     // Use the below to investigate
-    | project CallerIpAddress, Caller, TimeGenerated, OperationNameValue
+    //| project CallerIpAddress, Caller, TimeGenerated, OperationNameValue
