@@ -1,0 +1,4 @@
+let VIPUsers = (_GetWatchlist('VIPUsers') | distinct ["User Principal Name"]);
+SigninLogs
+| where UserPrincipalName in~ (VIPUsers)
+| project TimeGenerated, UserPrincipalName, ResultSignature, AppDisplayName
