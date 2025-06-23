@@ -139,7 +139,7 @@ $diagnosticSettings = Get-AzDiagnosticSetting -ResourceId $resourceId -WarningAc
 
 #####Export
 
-$DiagResults | Export-Csv -Force -Path "AzureStorageAccountDiagnosticSettings5.csv"
+$DiagResults | Export-Csv -Force -Path "AzureStorageAccountDiagnosticSettings.csv"
 
 #You will need to filter out the ones that do not have a diagnostic setting
 
@@ -148,7 +148,7 @@ $DiagResults | Export-Csv -Force -Path "AzureStorageAccountDiagnosticSettings5.c
 ###############################################
 ######           Removal of diagnostic settings
 
-$CSVremove = Import-Csv -Path "AzureStorageAccountDiagnosticSettingsUPDATE5.csv"
+$CSVremove = Import-Csv -Path "AzureStorageAccountDiagnosticSettingsUPDATE.csv"
 
 
 foreach ($row in $CSVremove) {
