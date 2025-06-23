@@ -38,9 +38,7 @@ $diagnosticSettings = Import-Csv -Path "NSGDiagnosticSettingsUPDATED.csv"
 
 
 foreach ($setting in $diagnosticSettings) {
-
-    $resourceId = (Get-AzNetworkSecurityGroup -Name $setting.NSGName -ResourceGroupName $setting.ResourceGroupName).Id
-
+$resourceid = $setting.resourceid
     Remove-AzDiagnosticSetting -ResourceId $resourceId -Name $setting.DiagnosticSettingName
 
 }
