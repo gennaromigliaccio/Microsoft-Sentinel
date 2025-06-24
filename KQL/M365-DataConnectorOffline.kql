@@ -1,0 +1,4 @@
+let LastIngest = toscalar(OfficeActivity | summarize max(TimeGenerated));
+let HoursSinceLastIngest = datetime_diff('hour', now(), LastIngest);
+print HoursSinceLastIngest
+| where HoursSinceLastIngest > 12
