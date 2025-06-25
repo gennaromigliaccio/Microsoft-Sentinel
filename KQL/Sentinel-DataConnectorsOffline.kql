@@ -1,3 +1,5 @@
+//When adding as an analytical rule, ensure 'Alert Details' are populated with "{{TableName}}
+
 let nowTime = now();
 let threshold = 12h;
 union 
