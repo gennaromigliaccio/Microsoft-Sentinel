@@ -8,7 +8,7 @@ Foreach ($Subscription in $Subscriptions) {
 
 Set-Azcontext $subscription
 
-####### Get the NSG Diagnostic Settings
+####### Get the Logic App Diagnostic Settings
 
 $logicApps = Get-AzResource -ResourceType "Microsoft.Logic/workflows"
 
