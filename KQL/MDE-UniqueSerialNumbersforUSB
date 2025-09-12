@@ -1,0 +1,11 @@
+DeviceEvents
+| where ActionType == "UsbDriveMounted" or ActionType == "UsbDriveUnmounted"
+| extend parsed = parse_json(AdditionalFields)
+| summarize 
+    Count = count(), 
+    FirstSeen = min(Timestamp), 
+    LastSeen = max(Timestamp), 
+    Devices = make_set(DeviceName), 
+    Actions = make_set(ActionType)
+    by SerialNumber = tostring(parsed.SerialNumber)
+| sort by LastSeen desc
