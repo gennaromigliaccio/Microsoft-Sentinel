@@ -1,0 +1,12 @@
+union (
+    DeviceNetworkEvents
+    | project DeviceId, Timestamp, DeviceName
+), (
+    DeviceInfo
+    | project DeviceId, Timestamp, DeviceName
+), (
+    DeviceEvents
+    | project DeviceId, Timestamp, DeviceName
+)
+| summarize LastSeen = max(Timestamp) by DeviceId, DeviceName
+| project DeviceId, LastSeen, DeviceName
