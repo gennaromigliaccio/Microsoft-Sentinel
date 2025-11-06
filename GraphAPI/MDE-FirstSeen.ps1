@@ -3,6 +3,9 @@ $tenantId = "YOUR TENANT ID"
 $clientId = "CLIENT ID/REGISTERED APP ID"
 $clientSecret = "REGISTERED APP SECRET VALUE"
 
+# $tenantId is your Directory (tenant) ID 
+# $clientId is your Application (client) ID found in the App Registration
+# $clientSecret is the Value of the secret (not the ID or description)
 
  #Prepare token request
 $tokenUri = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token"
