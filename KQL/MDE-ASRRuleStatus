@@ -1,0 +1,5 @@
+//Shows the Status of each rule against each device.
+DeviceTvmInfoGathering
+| extend ASR = parse_json(AdditionalFields.AsrConfigurationStates)
+| project DeviceName, LastSeenTime, OSPlatform, ASR
+| evaluate bag_unpack(ASR)
